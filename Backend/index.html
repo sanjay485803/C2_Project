@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> ChatCoder_IITP </title>
+
+    <!-- Giving favicon to title -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_iitpLogo/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_iitpLogo/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_iitpLogo/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+
+    <!-- Bootstrap cdn link we use -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+
+    <!-- we link codemirror .css and .js file with our file index.html -->
+    <link rel="stylesheet" href="codemirror-5.65.9/lib/codemirror.css">
+    <script src="codemirror-5.65.9/mode/python/python.js"></script>
+
+    <!--  providing MODES of Lang Coding eg : c++ or java or in  python -->
+    <script src="codemirror-5.65.9/lib/codemirror.js"></script>
+    <script src="codemirror-5.65.9/mode/clike/clike.js"></script>
+
+    <!-- THEMES PROVIDING -->
+    <link rel="stylesheet" href="codemirror-5.65.9/theme/dracula.css">
+
+    <!-- AUTO CLOSING BRACKET -->
+    <script src="codemirror-5.65.9/addon/edit/closebrackets.js"></script>
+
+    <!-- for button icons  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <!-- Greeting to our platform and for this we use inline CSS-->
+    <h2> 
+        <style>
+            .blink {
+                animation: blinker 1.5s linear infinite;
+                color: rgb(255, 0, 119);
+                font-family: sans-serif;
+            }
+
+            @keyframes blinker {
+                50% {
+                    opacity: 0;
+                }
+            }
+        </style>
+        <marquee vspace="5" hspace="65" class="blink" loop="5" width="60%" height="60%" behaviour="scroll" scrollamount="35"  direction="left"> <i><b>  "Welcome to ChatCoder_IITP"  </b></i></marquee> 
+    </h2>
+
+
+    <div class="row m-3">
+        <div class="col">
+            <!-- Multilingual CHOOSE - OPTION providing -->
+            <div class="d-flex justify-content-between mb-2 bg-dark rounded p-2">
+                <div class="col-12 w-25">
+                    <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+                    <select class="form-select" id="inlineFormSelectPref">
+                        <option selected>Choose...</option>
+                        <option value="Java">Java</option>
+                        <option value="Cpp">Cpp</option>
+                        <option value="Python">Python</option>
+                    </select>
+                </div>
+                <div>
+
+                    <!-- for RUN button -->
+                    <button type="button" class="btn btn-success">C2 Run</button>
+                    <button type="button" id="run" class="btn btn-success"><i class="bi bi-play-fill"></i></button>
+                </div>
+            </div>
+
+            <!-- mainDisplay editor CODING AREA -->
+            <textarea type="text" id="editor" class="form-control" aria-label="First name"></textarea>
+        </div>
+        <div class="col d-flex flex-column rounded bg-dark px-4">
+            <div class="h-50">
+                <!-- for right side make (input & output BOX ) desigining -->
+                <label for="Input" class="text-light mt-4 mb-2">Input - Box </label>
+                <textarea type="text" id="input" class="form-control h-75" aria-label="Last name"></textarea>
+            </div>
+            <div class="h-50">
+                <label for="Output" class="text-light mb-2">Output</label>
+                <textarea type="text" id="output" class="form-control h-75" aria-label="Last name"></textarea>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+<script>
+    var editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
+        mode: "text/x-c++src",
+        theme: "dracula",
+        lineNumbers: true,          // AUTO - NUMBERING on LEFTSIDE for each line of codes
+        autoCloseBrackets: true,
+
+    })
+
+    //INPUT, OUTPUT, RUN button
+    var width = window.innerWidth
+    var input = document.getElementById("input")
+    var output = document.getElementById("output")
+    var run = document.getElementById("run")
+    editor.setSize(0.7 * width, "500")          // editor size = 70% width, 500 height
+
+
+    // CHANGE EDITOR SYNTAX format as prog Lang changed
+    var option = document.getElementById("inlineFormSelectPref")
+    option.addEventListener("change", function () {
+        if (option.value == "Java") {
+            editor.setOption("mode", "text/x-java")
+        }
+        else if (option.value == "python") {
+            editor.setOption("mode", "text/x-python")
+        }
+        else {
+            editor.setOption("mode", "text/x-c++src")
+        }
+    })
+
+    //make code named obj
+    var code;
+    run.addEventListener("click", async function () {
+        code = {
+            code: editor.getValue(),
+            input: input.value,
+            lang: option.value
+        }
+        console.log(code)
+        var oData = await fetch("http://localhost:3030/compile", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(code)
+        })
+
+        //OUTPUT READING as in JSON format
+        var d = await oData.json()
+        output.value = d.output
+    })
+</script>
+
+</html>

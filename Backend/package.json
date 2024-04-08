@@ -1,0 +1,18 @@
+{
+  "name": "compiler",
+  "version": "1.0.0",
+  "description": "This is our Capstone Project 108 at  Indian Institute of Technology ( I.I.T ) Patna ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ankit Kumar and his team members",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "compilex": "^0.7.4",
+    "express": "^4.18.3",
+    "nodemon": "^2.0.22"
+  }
+}
+
