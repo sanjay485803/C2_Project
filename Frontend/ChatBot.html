@@ -3,9 +3,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1 viewport-fit=cover, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <style>
       body {
-        background-color: rgb(98, 231, 107);
-        margin-left: 80%;
-        margin-top: 10%;
+        background-image: url(Image/Bot_Profile_Image.png) ;
+        background-attachment: fixed;
+        background-size: cover;
+        margin: 0 auto;
         display: -ms-flexbox;
         display: -webkit-flex;
         display: flex;
@@ -13,10 +14,10 @@
         height: 100vh;
       }
       #bp-web-widget-container {
-        max-height: 50%;
-        width: 281px;
+        max-height: 90%;
+        width: 481px;
         margin: auto;
-        flex-grow: 2;
+        flex-grow: 1;
       }
       #bp-web-widget-container div {
         height: 100%;
@@ -25,41 +26,38 @@
         position: relative !important;
       }
     </style>
-    <title>ChatCoder(C2)</title>
+    <title>Chatbot</title>
   </head>
   <body>
 
   <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
 <script>
   window.botpressWebChat.init({
-      "composerPlaceholder": "Chat with bot",
-      "botConversationDescription": "This chatbot was built by Ashish kumar",
+      "composerPlaceholder": "ChatCoder(C2)-AI",
+      "botConversationDescription": "Built by group_78(Ashish,Aditya,Ankit,Anuapama)",
       "botId": "708ac98e-151c-48fb-bcf2-c6cb7841367c",
       "hostUrl": "https://cdn.botpress.cloud/webchat/v1",
       "messagingUrl": "https://messaging.botpress.cloud",
       "clientId": "708ac98e-151c-48fb-bcf2-c6cb7841367c",
       "webhookId": "e648d705-b125-42e6-821d-96675c08e008",
-      "lazySocket": true,
-      "themeName": "AmazeBot",
+      "lazySocket": false,
+      "themeName": "prism",
       "frontendVersion": "v1",
       "showPoweredBy": false,
-      "theme": "dark",
+      "theme": "prism",
       "themeColor": "#2563eb",
-      "hideWidget": false,
-      "disableAnimations": false,
-      "closeOnEscape": true,
+      "hideWidget": true,
+      "disableAnimations": true,
+      "closeOnEscape": false,
       "showConversationsButton": true,
-      "enableTranscriptDownload": true,
+      "enableTranscriptDownload": false,
       "className": "webchatIframe",
       "containerWidth": "100%25",
       "layoutWidth": "100%25",
-      "showCloseButton": true
+      "showCloseButton": false
   });
 window.botpressWebChat.onEvent(function () { window.botpressWebChat.sendEvent({ type: 'show' }) }, ['LIFECYCLE.LOADED']);
 </script>
 
-  </body>
+  </body>
 </html>
-
-
-<!-- This Chatbot featured   is powered by Ashish Kumar -->

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forget Password</title>
+    <link rel="stylesheet" href="forget.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            size: 10px;
+        }
+
+        img {
+            height: 11rem;
+            margin-left: auto;
+            margin-top: -8%;
+        }
+
+        /* body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: blue;
+    padding: 0;
+    margin: 0;
+
+} */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(rgb(0, 255, 166), rgb(50, 62, 241));
+            background-attachment: fixed;
+        }
+
+        a.button {
+            padding: 1px 6px;
+            border: 1px outset buttonborder;
+            border-radius: 3px;
+            color: buttontext;
+            background-color: buttonface;
+            text-decoration: none;
+        }
+
+        /* .container{
+    width: 25%;
+    border-radius: 5px;
+    border: 5px black;
+    background-color: aliceblue;
+    margin: 4rem;
+    padding: 1rem;
+    
+} */
+        .container {
+            background-color: #fff;
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 5px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            /* Prevents box-shadow from overflowing */
+        }
+
+        .container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            color: #555;
+            font-size: large;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.6s;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #f9f9f9;
+            transition: border-color 0.3s, background-color 0.3s;
+        }
+
+        /* input[type='Email']{
+    width: 70%;
+    padding: 0.1rem;
+} */
+        input[type='Email']:focus input[type="password"]:focus {
+            border-color: black;
+            background-color: rgb(211, 211, 211);
+        }
+
+        .form-group {
+            margin: 1.4rem;
+            padding: 1rem;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="container" style="text-align: center;">
+        <h2> ChatCoder(C2)</h2>
+        <form action="chage_password.html">
+            <img src="Image/LoginPage_Image.jpg" alt="" id="img">
+            <div class="form-group">
+                <label for="" style="text-align: left;">Email</label>
+                <input type="email">
+            </div>
+            <div class="form-group">
+                <label for="" style="text-align: left;">Enter OTP</label>
+                <input type="password">
+            </div>
+            <div class="form-group">
+                <button type="submit">
+                    <a> Confirm</a>
+                </button>
+            </div>
+            <p>
+                <a href="LoginPage.html">SignIn</a>
+            </p>
+    </div>
+    </form>
+</body>
+
+</html>

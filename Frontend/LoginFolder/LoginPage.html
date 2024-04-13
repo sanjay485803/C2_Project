@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            size: 10px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            height: 11rem;
+            margin-left: 18%;
+            margin-top: -9%;
+        }
+
+        .login-container {
+            background-color: #fff;
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            /* Prevents box-shadow from overflowing */
+        }
+
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #f9f9f9;
+            transition: border-color 0.3s, background-color 0.3s;
+        }
+
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            border-color: #007bff;
+            background-color: #fff;
+        }
+
+        .form_text {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: small;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.6s;
+        }
+
+        button:hover {
+            background-color: #40dff8;
+            color: black;
+        }
+
+        button:active {
+            background-color: #40dff8;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
+        /* Animation for login button */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        button:focus {
+            animation: Pressed Effect 1s infinite alternate;
+        }
+
+        /* body gradient */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom right, #28f7fe, #007bff);
+            background-size: cover;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="login-container">
+        <h2> ChatCoder(C2) Login</h2>
+        <form id="login-form">
+            <img src="Image/LoginPage_Image.jpg" alt="" id="img">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="Phone/Email id">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required placeholder="Enter password"><br><br>
+            </div>
+            <button type="submit">Login</button><br><br>
+            <p class="form_text">
+                <a href="forget.html">Forget your
+                    password</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="Newsingup.html"> SingUp </a>
+            </p>
+        </form>
+    </div>
+
+
+    <script>
+        sdocument.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('login-form').addEventListener('submit', function (event) {
+                event.preventDefault();
+                var email = document.getElementById('email').value;
+                var password = document.getElementById('password').value;
+
+                // You can implement your validation logic here
+                if (email === 'example@example.com , ' && password === 'password') {
+                    alert('Login successful');
+                    // Redirect or do any other action on successful login
+                } else {
+                    alert('Invalid email or password');
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>
+
+
+<!-- This login page is created by Ashish Kumar (Group 78 member of Capstone Project  at IIT Patna) -->
