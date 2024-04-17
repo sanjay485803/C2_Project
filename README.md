@@ -66,10 +66,12 @@ Explore the project repository: [Chat Coder's Haven Repository](https://github.c
 
 
 <!-- screenshot of testing part -->
+<br><br>
 
 ![ChatCoder's Hello World](README_Img_Testing_ChatCoder_HelloWorld.png)
 
 
+<br><br>
 <!-- Team member's work DIVISION -->
 ## Team Members: Roles and Responsibilities
 
