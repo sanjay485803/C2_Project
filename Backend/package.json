@@ -2,10 +2,20 @@
   "name": "compiler",
   "version": "1.0.0",
   "description": "This is our Capstone Project 108 at  Indian Institute of Technology ( I.I.T ) Patna ",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start_ChatCoder": "node app.js"
   },
+  
+  "keywords": [
+    "ChatCoder's Haven",
+    "ChatCoder",
+    "Online compiler with multi features",
+    "Indian Institute of Technology (IIT) Patna",
+    "Capstone Project"
+  ],
+
+
   "author": "Ankit Kumar and his team members",
   "license": "ISC",
   "dependencies": {
