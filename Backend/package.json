@@ -4,7 +4,7 @@
   "description": "This is our Capstone Project 108 at  Indian Institute of Technology ( I.I.T ) Patna ",
   "main": "app.js",
   "scripts": {
-    "start_ChatCoder": "node app.js"
+    "ChatCoder": "node app.js"
   },
   
   "keywords": [

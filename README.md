@@ -24,6 +24,31 @@ Find me on [Linktree](https://linktr.ee/ankit127iitp) to explore all my social p
 
 
 
+## Getting Started
+
+First, run the application in the development server (mode):
+
+```bash
+node app.js
+# or
+npm run ChatCoder
+
+```
+
+Open [http://localhost:3030](http://localhost:3030) with your browser to see the result.
+
+You can start editing the page by modifying `Backend/app.js`. The page auto-updates as you edit the file.
+
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [NPM Documentation](https://docs.npmjs.com/about-npm) - learn about NPM  features and API.
+- [Learn Node.js](https://nodejs.org/docs/latest/api/) - an interactive Node.js tutorial.
+
+You can check out [the Node.js GitHub repository](https://github.com/nodejs) - your feedback and contributions are welcome!
+
 <!-- summary of proj -->
 ## Project Overview
 
